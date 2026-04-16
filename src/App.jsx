@@ -1,52 +1,40 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import {
+  BrowserRouter as Router,
+  Routes, Route, Link
+} from 'react-router-dom'
+import Etusivu from './components/Etusivu'
+import Tuotesivu from './components/Tuotesivu'
 
-import Tuotekortti from './Tuotekortti'
-
-//tuodaan tähän tiedostoon käyttöön Tuotekortti-komponentti.
 
 const App = () => {
-  // luodaan useState, joka tallentaa listan nimeltä tuotteet. Tätä listaa päivitetään kutsumalla funktiota setTuotteet
-  const [tuotteet, setTuotteet] = useState([])
-  console.log('tuotteet', tuotteet)
-
-
-
-  //haetaan tuotetiedot serveriltä, tässä pelkästään tarjoukset
-  useEffect(() => {
-    axios
-      .get('http://localhost:3001/api/tarjoukset')
-      .then(response => {
-        setTuotteet(response.data.tarjoukset)
-      })
-  }, [])
-
-  //tuotteet.map käy läpi tuotteet-listan ja jokaisen yksittäisen tuotteet kohdalla syöttää Tuotekortille
-  //tiedoksi tuotteen tiedot ja id:n (React vaatii id:n aina kun käydään listaa läpi).
-  //Palautetaan otsikko ja jokaisesta tuotteesta Tuotekortti.
+  const padding = {
+    padding: 5
+  }
   return (
-    <div>
-      <h1>Tarjoukset</h1>
+    <Router>
       <div>
-        <p>Haku</p>
+        <Link style={padding} to="/">Navigointi</Link>
+        <Link style={padding} to="/etusivu">Etusivu</Link>
+        <Link style={padding} to="/tarjoukset">tarjoukset</Link>
+        <Link style={padding} to="/oheislaitteet">oheislaitteet</Link>
+        <Link style={padding} to="/tietokoneet">tietokoneet</Link>
       </div>
-      <div class="container">
 
-        <div class="breadcrumb">
-          <p>Breadcrumb</p>
-        </div>
-        <div class="sivupalkki">
-          <p>Sivupalkki</p>
-        </div>
-        <div class="lajittelu">
-          <p>Lajittelu</p>
-        </div>
-        <div class="tuotecontainer">
-          {tuotteet.map(tuote =>
-            <Tuotekortti tuote={tuote} key={tuote.id} />)}
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/tarjoukset" element={
+          <Tuotesivu sivu={"tarjoukset"} />
+        } />
+         <Route path="/oheislaitteet" element={
+          <Tuotesivu sivu={"oheislaitteet"} />
+        } />
+         <Route path="/tietokoneet" element={
+          <Tuotesivu sivu={"tietokoneet"} />
+        } />
+         <Route path="/etusivu" element={
+          <Tuotesivu sivu={"etusivu"} />
+        } />
+      </Routes>
+    </Router>
   )
 }
 export default App
