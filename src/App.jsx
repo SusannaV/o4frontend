@@ -12,12 +12,12 @@ const App = () => {
 
 
 
-  //haetaan tuotetiedot serveriltä, tässä pelkästään oheislaitteet
+  //haetaan tuotetiedot serveriltä, tässä pelkästään tarjoukset
   useEffect(() => {
     axios
-      .get('http://localhost:3001/api/oheislaitteet')
+      .get('http://localhost:3001/api/tarjoukset')
       .then(response => {
-        setTuotteet(response.data.oheislaitteet)
+        setTuotteet(response.data.tarjoukset)
       })
   }, [])
 
@@ -27,8 +27,25 @@ const App = () => {
   return (
     <div>
       <h1>Tarjoukset</h1>
-      {tuotteet.map(tuote =>
-        <Tuotekortti tuote={tuote} key={tuote.id} />)}
+      <div>
+        <p>Haku</p>
+      </div>
+      <div class="container">
+
+        <div class="breadcrumb">
+          <p>Breadcrumb</p>
+        </div>
+        <div class="sivupalkki">
+          <p>Sivupalkki</p>
+        </div>
+        <div class="lajittelu">
+          <p>Lajittelu</p>
+        </div>
+        <div class="tuotecontainer">
+          {tuotteet.map(tuote =>
+            <Tuotekortti tuote={tuote} key={tuote.id} />)}
+        </div>
+      </div>
     </div>
   )
 }

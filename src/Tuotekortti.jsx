@@ -4,7 +4,7 @@ const Tuotekortti = ({ tuote }) => {
   //Renderöidään tuotteesta nimi, hinta, kolme ominaisuutta (tämänkin voisi tehdä .map-funtiolla) sekä sama kuva kaikille tuotteille
 
   return (
-    <div>
+    <div class="tuotekortti">
       <h2>{tuote.nimi}</h2>
       <p>{tuote.hinta} €</p>
       <p>{tuote.ominaisuudet[0]}</p>
