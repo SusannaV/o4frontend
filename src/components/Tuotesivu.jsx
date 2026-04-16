@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Tuotekortti from './Tuotekortti'
+import Sivupalkki from './Sivupalkki'
 
 const Tuotesivu = ({sivu}) => {
   const [tuotteet, setTuotteet] = useState([])
   console.log('tuotteet', tuotteet)
-
-  //const sivu = 'tarjoukset'
 
   const url = `http://localhost:3001/api/${sivu}`
 
@@ -31,7 +30,7 @@ const Tuotesivu = ({sivu}) => {
           <p>Breadcrumb</p>
         </div>
         <div class="sivupalkki">
-          <p>Sivupalkki</p>
+          <Sivupalkki/>
         </div>
         <div class="lajittelu">
           <p>Lajittelu</p>

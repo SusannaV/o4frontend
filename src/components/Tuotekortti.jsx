@@ -1,8 +1,5 @@
 const Tuotekortti = ({ tuote }) => {
-  //console.log(tuote.ominaisuudet)
 
-  //Renderöidään tuotteesta nimi, hinta, kolme ominaisuutta (tämänkin voisi tehdä .map-funtiolla) sekä sama kuva kaikille tuotteille
-  console.log(tuote.kategoria)
   const kategoriaKuvat = {
     Näytöt: "https://upload.wikimedia.org/wikipedia/commons/7/76/MonitorLCDlcd.svg",
     Läppärit: "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV8zNV9waG90b2dyYXBoX29mX2xhcHRvcF9tb2NrdXBfd2l0aF93aGl0ZV9zY3JlZV9kNTFiNjVlZS02Y2RkLTQ0N2UtYmRmZS01MzdiZWZlNmY5NTIucG5n.png",
@@ -18,12 +15,13 @@ const Tuotekortti = ({ tuote }) => {
     <div class="tuotekortti">
       <h2>{tuote.nimi}</h2>
       <p>{tuote.hinta} €</p>
-      <p>{tuote.ominaisuudet[0]}</p>
-      <p>{tuote.ominaisuudet[1]}</p>
-      <p>{tuote.ominaisuudet[2]}</p>
+      <ul>
+        <li>{tuote.ominaisuudet[0]}</li>
+        <li>{tuote.ominaisuudet[1]}</li>
+        <li>{tuote.ominaisuudet[2]}</li>
+      </ul>
       <img src={valittuKuva} alt={tuote.kategoria} style={{ width: '100%', maxWidth: '100px', borderRadius: '8px' }} />
     </div>)
 }
 
-//palautetaan 1. rivillä määritelty Tuotekortti-komponentti käyttöön
 export default Tuotekortti

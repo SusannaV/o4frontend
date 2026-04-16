@@ -13,8 +13,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Link style={padding} to="/">Navigointi</Link>
-        <Link style={padding} to="/etusivu">Etusivu</Link>
+        <Link style={padding} to="/">Etusivu</Link>
         <Link style={padding} to="/tarjoukset">tarjoukset</Link>
         <Link style={padding} to="/oheislaitteet">oheislaitteet</Link>
         <Link style={padding} to="/tietokoneet">tietokoneet</Link>
@@ -30,8 +29,8 @@ const App = () => {
          <Route path="/tietokoneet" element={
           <Tuotesivu sivu={"tietokoneet"} />
         } />
-         <Route path="/etusivu" element={
-          <Tuotesivu sivu={"etusivu"} />
+         <Route path="/" element={
+          <Etusivu sivu={"etusivu"} />
         } />
       </Routes>
     </Router>
