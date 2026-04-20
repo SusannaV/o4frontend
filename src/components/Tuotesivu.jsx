@@ -3,10 +3,12 @@ import axios from 'axios'
 
 import Tuotekortti from './Tuotekortti'
 import Sivupalkki from './Sivupalkki'
+import Lajittelu from './Lajittelu'
 
 const Tuotesivu = ({ sivu }) => {
   const [tuotteet, setTuotteet] = useState([])
   const [suodattimet, setSuodattimet] = useState({ kategoriat: [], valmistajat: [], koot: [] })
+  const [lajittelu, setLajittelu] = useState("suosituin")
   console.log('tuotteet', tuotteet)
 
   const url = `http://localhost:3001/api/${sivu}`
@@ -72,6 +74,20 @@ const Tuotesivu = ({ sivu }) => {
   });
 
 
+  //NÄYTETTÄVIEN TUOTTEIDEN SORTTAUS
+
+  // Lajitellaan tuotteet käyttäjän valitsemaan järjestykseen. Otetaan naytettavaTuotteet, 
+  // tehdään siitä kopio, sortataan se joko halvimmasta kalleimpaan, toisin päin tai 
+  // vertaillaan suoraan tuotteella olevaa kenttää, kuten suosio tai arviot.
+  // Lajittelu-komponenttia kutsutaan alla olevassa returnissa
+  const lajitellutTuotteet = [...naytettavatTuotteet].sort((a, b) => {
+    if(lajittelu === "halvin") return a.hinta - b.hinta
+    if(lajittelu === "kallein") return b.hinta - a.hinta
+    return b[lajittelu] - a[lajittelu]
+  }
+  )
+
+
   // Tämä sit näytetään käyttäjälle:
   return (
     <div>
@@ -88,10 +104,10 @@ const Tuotesivu = ({ sivu }) => {
           <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin} />
         </div>
         <div className="lajittelu">
-          <p>Lajittelu</p>
+          <Lajittelu setLajittelu={setLajittelu}/>
         </div>
         <div className="tuotecontainer">
-          {naytettavatTuotteet.map(tuote =>
+          {lajitellutTuotteet.map(tuote =>
             <Tuotekortti tuote={tuote} key={tuote.id} />)}
         </div>
       </div>
