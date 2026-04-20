@@ -7,10 +7,10 @@ Generoin tähän kansioon json-tiedoston, jossa on lista tuotteista, joka nyt tu
 
 To do:
 - Tuotekorttien sijoittaminen oikeaan kohtaan, 2 rinnakkain (ainakin, jos näyttö on tarpeeksi iso)
-- Kokojen lisääminen sivupalkkiin
+- Koon lisääminen sivupalkkiin
+- Hinnan lisääminen sivupalkkiin
 - Navigoinnin siirtäminen oikeampaan paikkaan (breadcrumbin tilalle)
 - Haun toteuttaminen
-- Lajittelun toteuttaminen
 - Etusivun teko
 - Muiden sivujen teko, jos ne tehdään
 
