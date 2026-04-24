@@ -12,7 +12,7 @@ const Tuotekortti = ({ tuote }) => {
   const valittuKuva = kategoriaKuvat[tuote.kategoria] || "https://upload.wikimedia.org/wikipedia/commons/7/76/MonitorLCDlcd.svg";
 
   return (
-    <div class="tuotekortti">
+    <div className="tuotekortti">
       <h2>{tuote.nimi}</h2>
       <p>{tuote.hinta} €</p>
       <ul>
