@@ -94,21 +94,24 @@ const Tuotesivu = ({ sivu }) => {
       <div>
         <p>Ostoskori</p>
       </div>
-      <div className="container">
-
         <div className="breadcrumb">
-          <p>Breadcrumb</p>
+            <p>Breadcrumb</p>
         </div>
+
+        <div className="container">
+
+
         <div className="sivupalkki">
           <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin} />
         </div>
-        <div className="lajittelu">
-          <Lajittelu setLajittelu={setLajittelu} />
-        </div>
+
         <div className="tuotecontainer">
           {lajitellutTuotteet.map(tuote =>
             <Tuotekortti tuote={tuote} key={tuote.id} />)}
         </div>
+          <div className="lajittelu">
+              <Lajittelu setLajittelu={setLajittelu} />
+          </div>
       </div>
     </div>
   )

@@ -48,6 +48,8 @@
 
 body {
   margin: 0;
+
+
 }
 
 #root {
@@ -87,39 +89,76 @@ h2 {
     font-size: 20px;
   }
 }
+.sivupalkki h3, h4 {
+    color: #08060d;
+}
 p {
   margin: 0;
 }
+.tuotekortti h2, .tuotekortti ul {
+    color: #08060d;
+}
+.lajittelu label {
+    color: #08060d;
+
+}
+
 
 .container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: paleturquoise;
-  padding: 10px;
-}
 
-.tuotecontainer {
-  background-color: grey;
-    position: relative;
-    left: 400px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: paleturquoise;
+    padding: 10px;
+    height: auto;
+    max-height: 100%;
 
-}
 
-.sivupalkki {
-   width: 100%;
-    height: 100%;
-    position: relative;
-    left: -700px;
-}
+    .tuotecontainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+        align-content: flex-start;
+        align-items: center;
 
-.tuotekortti{
-  background-color: white;
-  border-color: black;
-  border-radius: 3%;
- border-style: solid;
-    border-width: 3px;
-}
 
-form label{
-  display: block;
+
+    }
+
+    form {
+        text-align: left;
+        color: #08060d;
+    }
+
+
+    .sivupalkki {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+    }
+
+    .lajittelu {
+        position: relative;
+
+
+    }
+
+    .tuotekortti {
+        background-color: white;
+        border-color: black;
+        border-radius: 3%;
+        width: 45%;
+        border-style: groove;
+        border-width: 5px;
+        height: 35vh;
+        max-height: 100%;
+
+
+    }
+
+    form label {
+        display: block;
+    }
 }
