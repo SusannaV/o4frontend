@@ -14,9 +14,6 @@ const App = () => {
   const [hakutulokset, setHakutulokset] = useState([])
   console.log('hakutulokset',hakutulokset)
 
-  const padding = {
-    padding: 5
-  }
 
   // Lisätty Haku-komponentti, jonne voi kirjoittaa hakua
   // Hakutuloslista renderöidään vain, jos hakutulokset-listassa on elementtejä
@@ -25,12 +22,12 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <Link style={padding} to="/">Etusivu</Link>
-        <Link style={padding} to="/tarjoukset">tarjoukset</Link>
-        <Link style={padding} to="/oheislaitteet">oheislaitteet</Link>
-        <Link style={padding} to="/tietokoneet">tietokoneet</Link>
-        <div>
+      <div className='routelinkit'>
+        <Link to="/">Etusivu</Link>
+        <Link to="/tarjoukset">Tarjoukset</Link>
+        <Link to="/oheislaitteet">Oheislaitteet</Link>
+        <Link to="/tietokoneet">Tietokoneet</Link>
+        <div className='hakutulostesti'>
           <Haku setHakutulokset={setHakutulokset}/>
           {hakutulokset && hakutulokset.length > 0 && <HakutulosLista hakutulokset={hakutulokset} />}
         </div>

@@ -14,3 +14,6 @@ To do:
 - Etusivun teko
 - Siirtymien toteuttaminen muille sivuille
 - Muiden sivujen teko, jos ne tehdään
+- Ilmoituksen lisääminen, jos suodattimet tai haku ei tuota yhtään tulosta
+- Logon lisääminen
+- Ostoskori-ikonin lisääminen

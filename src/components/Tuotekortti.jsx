@@ -20,7 +20,7 @@ const Tuotekortti = ({ tuote }) => {
         <li>{tuote.ominaisuudet[1]}</li>
         <li>{tuote.ominaisuudet[2]}</li>
       </ul>
-      <img src={valittuKuva} alt={tuote.kategoria} style={{ width: '100%', maxWidth: '100px', borderRadius: '8px' }} />
+      <img src={valittuKuva} alt={tuote.kategoria} />
     </div>)
 }
 
