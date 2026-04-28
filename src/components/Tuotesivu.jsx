@@ -8,6 +8,7 @@ import Lajittelu from './Lajittelu'
 const Tuotesivu = ({ sivu }) => {
   const [tuotteet, setTuotteet] = useState([])
   const [suodattimet, setSuodattimet] = useState({ kategoriat: [], valmistajat: [], koot: [] })
+  const [hintaSuodattimet, setHintaSuodattimet] = useState({ minHinta: 0, maxHinta: 4000 })
   const [lajittelu, setLajittelu] = useState("suosituin")
 
   const url = `http://localhost:3001/api/${sivu}`
@@ -50,6 +51,14 @@ const Tuotesivu = ({ sivu }) => {
     })
   }
 
+  const muutaHintaSuodatin = (ryhmä, arvo) => {
+    setHintaSuodattimet(prev => {
+      return {
+        ...prev, [ryhmä]: arvo
+      }
+    })
+  }
+
   // NÄYTETTÄVIEN TUOTTEIDEN FILTTERÖINTI
 
   //Filtteröidään kaikki tuotteet, jotka on haettu bäkkäriltä. Eli käytään jokainen tuote yksi kerrallaan läpi
@@ -60,16 +69,22 @@ const Tuotesivu = ({ sivu }) => {
     //Jos on valittu yksi tai useampi kategoria, tarkistetaan suodattimien listasta, onko tämän tällä hetkellä
     //käsittelyssä olevan tuotteen kategoria suodattimien listalla. Jos on, niin näytetään, jos ei, niin filtteröidään pois
     const kategoriaMatch = suodattimet.kategoriat.length === 0 ||
-      suodattimet.kategoriat.includes(tuote.kategoria);
+      suodattimet.kategoriat.includes(tuote.kategoria)
 
     const valmistajaMatch = suodattimet.valmistajat.length === 0 ||
-      suodattimet.valmistajat.includes(tuote.merkki);
+      suodattimet.valmistajat.includes(tuote.merkki)
 
     const kokoMatch = suodattimet.koot.length === 0 ||
-      suodattimet.koot.includes(tuote.koko);
+      suodattimet.koot.includes(tuote.koko)
 
-    //Lopuksi lisätään tuote näytettävien listaan vain, jos se läpäisee kaikkien kolmen Matcherin ehdot
-    return kategoriaMatch && valmistajaMatch && kokoMatch;
+    const hintaMinMatch = hintaSuodattimet.minHinta === 0 ||
+      tuote.hinta >= hintaSuodattimet.minHinta
+
+    const hintaMaxMatch = hintaSuodattimet.maxHinta === 4000 ||
+      tuote.hinta <= hintaSuodattimet.maxHinta
+
+    //Lopuksi lisätään tuote näytettävien listaan vain, jos se läpäisee kaikkien viiden Matcherin ehdot
+    return kategoriaMatch && valmistajaMatch && kokoMatch && hintaMinMatch && hintaMaxMatch;
   });
 
 
@@ -86,7 +101,6 @@ const Tuotesivu = ({ sivu }) => {
   }
   )
 
-
   // Tämä sit näytetään käyttäjälle:
   return (
     <div>
@@ -94,24 +108,25 @@ const Tuotesivu = ({ sivu }) => {
       <div>
         <p>Ostoskori</p>
       </div>
-        <div className="breadcrumb">
-            <p>Breadcrumb</p>
-        </div>
+      <div className="breadcrumb">
+        <p>Breadcrumb</p>
+      </div>
 
-        <div className="container">
+      <div className="container">
 
 
         <div className="sivupalkki">
-          <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin} />
+          <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin}
+            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin} />
         </div>
 
         <div className="tuotecontainer">
           {lajitellutTuotteet.map(tuote =>
             <Tuotekortti tuote={tuote} key={tuote.id} />)}
         </div>
-          <div className="lajittelu">
-              <Lajittelu setLajittelu={setLajittelu} />
-          </div>
+        <div className="lajittelu">
+          <Lajittelu setLajittelu={setLajittelu} />
+        </div>
       </div>
     </div>
   )

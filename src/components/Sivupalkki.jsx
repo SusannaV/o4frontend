@@ -1,19 +1,19 @@
-const Sivupalkki = ({ suodattimet, muutaSuodatin }) => {
+const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuodatin }) => {
   const kategoriaVaihtoehdot = ['Läppärit', 'Pöytäkoneet', 'Kuulokkeet', 'Hiiret', 'Näytöt', 'Näppäimistöt'];
   const valmistajaVaihtoehdot = ['Acer', 'Apple', 'Asus', 'Corsair', 'Glorious', 'HP', 'JBL', 'Keychron', 'Lenovo', 'Logitech', 'MSI', 'Razer', 'Sony', 'SteelSeries'];
 
 
   // Täällä käytään läpi kaikki kategoriavaihtoehdot ja jokaisesta näytetään nimi sekä checkbox-ruutu. Kun käydään läpi
   // jokainen vaihtoehto, kullekin näytettävälle riville saadaan samalla annettua oikea funktio sille, mitä tapahtuu kun checkboxin
-  //tilaa muutetaan (muutaSuodatin()-funktio, joka on määritelty Tuotesivulla).
+  // tai kentän tilaa muutetaan (muutaSuodatin()-funktio, joka on määritelty Tuotesivulla).
 
   //To do: lisää koko-valinta
 
   return (
     <div className="Sivupalkki">
       <h3>Suodattimet</h3>
-      <h4>Kategoria</h4>
 
+      <h4>Kategoria</h4>
       <form>
         {kategoriaVaihtoehdot.map(nimi => (
           <label key={nimi}>
@@ -28,10 +28,31 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin }) => {
         ))}
       </form>
 
+      <h4>Hinta</h4>
+      <form>
+        <label key="minhinta">
+          Min
+        </label>
+        <input type="number" name="minHinta" value={hintaSuodattimet.minHinta} max={hintaSuodattimet.maxHinta}
+          onChange={(e) => {
+            const uusiArvo = Number(e.target.value);
+            muutaHintaSuodatin('minHinta', uusiArvo)
+          }}
+        />
+        <label key="maxhinta">
+          Max
+        </label>
+        <input type="number" name="maxHinta" name="maxHinta" value={hintaSuodattimet.maxHinta} min={hintaSuodattimet.minHinta}
+          onChange={(e) => {
+            const uusiArvo = Number(e.target.value);
+            muutaHintaSuodatin('maxHinta', uusiArvo)
+          }} />
+      </form>
+
       <h4>Valmistaja</h4>
       <form>
         {valmistajaVaihtoehdot.map(nimi => (
-           <label key={nimi}>
+          <label key={nimi}>
             <input
               type="checkbox"
               name={nimi}
@@ -42,6 +63,8 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin }) => {
           </label>
         ))}
       </form>
+
+
     </div>
   )
 }
