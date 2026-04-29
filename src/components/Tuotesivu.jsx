@@ -59,6 +59,11 @@ const Tuotesivu = ({ sivu }) => {
     })
   }
 
+  const tyhjennäSuodattimet = () => {
+    setSuodattimet({ kategoriat: [], valmistajat: [], koot: [] })
+    setHintaSuodattimet({ minHinta: 0, maxHinta: 4000 })
+  }
+
   // NÄYTETTÄVIEN TUOTTEIDEN FILTTERÖINTI
 
   //Filtteröidään kaikki tuotteet, jotka on haettu bäkkäriltä. Eli käytään jokainen tuote yksi kerrallaan läpi
@@ -100,6 +105,7 @@ const Tuotesivu = ({ sivu }) => {
     return b[lajittelu] - a[lajittelu]
   }
   )
+  console.log(lajitellutTuotteet)
 
   // Tämä sit näytetään käyttäjälle:
   return (
@@ -117,7 +123,8 @@ const Tuotesivu = ({ sivu }) => {
 
         <div className="sivupalkki">
           <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin}
-            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin} />
+            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin} 
+            tyhjennäSuodattimet={tyhjennäSuodattimet}/>
         </div>
 
         <div className="tuotecontainer">

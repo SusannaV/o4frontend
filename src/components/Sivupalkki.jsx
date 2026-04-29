@@ -1,4 +1,4 @@
-const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuodatin }) => {
+const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuodatin, tyhjennäSuodattimet }) => {
   const kategoriaVaihtoehdot = ['Läppärit', 'Pöytäkoneet', 'Kuulokkeet', 'Hiiret', 'Näytöt', 'Näppäimistöt'];
   const valmistajaVaihtoehdot = ['Acer', 'Apple', 'Asus', 'Corsair', 'Glorious', 'HP', 'JBL', 'Keychron', 'Lenovo', 'Logitech', 'MSI', 'Razer', 'Sony', 'SteelSeries'];
   const kokoVaihtoehdot = ['13', '14', '15', '16', '17', '18', '24', '27'];
@@ -78,6 +78,10 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSu
           </label>
         ))}
       </form>
+
+      <button onClick={tyhjennäSuodattimet}>
+        Tyhjennä kaikki suodattimet
+      </button>
 
     </div>
   )
