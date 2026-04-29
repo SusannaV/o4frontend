@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Haku = ({ setHakutulokset }) => {
-  const [hakuteksti, setHakuteksti] = useState("")
+const Haku = ({ setHakutulokset, hakuteksti, setHakuteksti }) => {
+
   const [kaikkiTuotteet, setKaikkiTuotteet] = useState([])
 
 
@@ -54,7 +54,6 @@ const Haku = ({ setHakutulokset }) => {
   //   "alennuksessa": true
   // },
 
-  console.log(hakuteksti)
   return (
     <form>
       <input

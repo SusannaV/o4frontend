@@ -105,7 +105,6 @@ const Tuotesivu = ({ sivu }) => {
     return b[lajittelu] - a[lajittelu]
   }
   )
-  console.log(lajitellutTuotteet)
 
   // Tämä sit näytetään käyttäjälle:
   return (
@@ -128,8 +127,12 @@ const Tuotesivu = ({ sivu }) => {
         </div>
 
         <div className="tuotecontainer">
-          {lajitellutTuotteet.map(tuote =>
+          {lajitellutTuotteet.length<1 
+          ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla. 
+              Kokeile vähentää suodattimia.</p>
+          : lajitellutTuotteet.map(tuote =>
             <Tuotekortti tuote={tuote} key={tuote.id} />)}
+          
         </div>
         <div className="lajittelu">
           <Lajittelu setLajittelu={setLajittelu} />

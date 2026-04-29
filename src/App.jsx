@@ -12,12 +12,12 @@ import HakutulosLista from './components/HakutulosLista'
 
 const App = () => {
   const [hakutulokset, setHakutulokset] = useState([])
-  console.log('hakutulokset',hakutulokset)
+    const [hakuteksti, setHakuteksti] = useState("")
 
 
   // Lisätty Haku-komponentti, jonne voi kirjoittaa hakua
   // Hakutuloslista renderöidään vain, jos hakutulokset-listassa on elementtejä
-  // Muoto on {onko hakutulokset lista ei-tyhjä} ja onko {hakutulosten pituus yli 0} ja jos molemmat palauttavat true, renderöidään
+  // Muoto on {onko hakutulokset lista ei-tyhjä} ja jos tämä on true, renderöidään
   // <Hakutuloslista>. Muuten ei renderöidä mitään.
 
   return (
@@ -28,8 +28,8 @@ const App = () => {
         <Link to="/oheislaitteet">Oheislaitteet</Link>
         <Link to="/tietokoneet">Tietokoneet</Link>
         <div className='hakutulos'>
-          <Haku setHakutulokset={setHakutulokset}/>
-          {hakutulokset && hakutulokset.length > 0 && <HakutulosLista hakutulokset={hakutulokset} />}
+          <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
+          {hakutulokset && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
         </div>
       </div>
 
