@@ -1,13 +1,13 @@
 const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuodatin }) => {
   const kategoriaVaihtoehdot = ['Läppärit', 'Pöytäkoneet', 'Kuulokkeet', 'Hiiret', 'Näytöt', 'Näppäimistöt'];
   const valmistajaVaihtoehdot = ['Acer', 'Apple', 'Asus', 'Corsair', 'Glorious', 'HP', 'JBL', 'Keychron', 'Lenovo', 'Logitech', 'MSI', 'Razer', 'Sony', 'SteelSeries'];
-
+  const kokoVaihtoehdot = ['13', '14', '15', '16', '17', '18', '24', '27'];
 
   // Täällä käytään läpi kaikki kategoriavaihtoehdot ja jokaisesta näytetään nimi sekä checkbox-ruutu. Kun käydään läpi
   // jokainen vaihtoehto, kullekin näytettävälle riville saadaan samalla annettua oikea funktio sille, mitä tapahtuu kun checkboxin
   // tai kentän tilaa muutetaan (muutaSuodatin()-funktio, joka on määritelty Tuotesivulla).
-
-  //To do: lisää koko-valinta
+  // Koon valinnassa otetaan stringistä vain 2 ekaa merkkiä, jolloin esim. 17" ja 17.3" tulevat valituksi jos käyttäjä
+  // valitsee listasta kohdan 17".
 
   return (
     <div className="Sivupalkki">
@@ -42,7 +42,7 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSu
         <label key="maxhinta">
           Max
         </label>
-        <input type="number" name="maxHinta" name="maxHinta" value={hintaSuodattimet.maxHinta} min={hintaSuodattimet.minHinta}
+        <input type="number" name="maxHinta" value={hintaSuodattimet.maxHinta} min={hintaSuodattimet.minHinta}
           onChange={(e) => {
             const uusiArvo = Number(e.target.value);
             muutaHintaSuodatin('maxHinta', uusiArvo)
@@ -64,6 +64,20 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSu
         ))}
       </form>
 
+      <h4>Näytön koko</h4>
+      <form>
+        {kokoVaihtoehdot.map(nimi => (
+          <label key={nimi}>
+            <input
+              type="checkbox"
+              name={nimi}
+              checked={suodattimet.koot.includes(nimi)}
+              onChange={() => muutaSuodatin('koot', nimi)}
+            />
+            {nimi}"
+          </label>
+        ))}
+      </form>
 
     </div>
   )

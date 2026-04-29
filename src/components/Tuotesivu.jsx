@@ -75,7 +75,7 @@ const Tuotesivu = ({ sivu }) => {
       suodattimet.valmistajat.includes(tuote.merkki)
 
     const kokoMatch = suodattimet.koot.length === 0 ||
-      suodattimet.koot.includes(tuote.koko)
+      suodattimet.koot.includes(tuote.koko.slice(0,2))
 
     const hintaMinMatch = hintaSuodattimet.minHinta === 0 ||
       tuote.hinta >= hintaSuodattimet.minHinta
