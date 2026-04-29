@@ -27,7 +27,7 @@ const App = () => {
         <Link to="/tarjoukset">Tarjoukset</Link>
         <Link to="/oheislaitteet">Oheislaitteet</Link>
         <Link to="/tietokoneet">Tietokoneet</Link>
-        <div className='hakutulostesti'>
+        <div className='hakutulos'>
           <Haku setHakutulokset={setHakutulokset}/>
           {hakutulokset && hakutulokset.length > 0 && <HakutulosLista hakutulokset={hakutulokset} />}
         </div>
