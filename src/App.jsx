@@ -20,6 +20,8 @@ const App = () => {
   // Muoto on {onko hakutulokset lista ei-tyhjä} ja jos tämä on true, renderöidään
   // <Hakutuloslista>. Muuten ei renderöidä mitään.
 
+  //Lisätty hakutulosten renderöintiehdoksi sen, että hakutulostekstin pituuden täytyy olla enemmän kuin 0
+
   return (
     <Router>
       <div className='routelinkit'>
@@ -29,7 +31,7 @@ const App = () => {
         <Link to="/tietokoneet">Tietokoneet</Link>
         <div className='hakutulos'>
           <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
-          {hakutulokset && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
+          {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
         </div>
       </div>
 

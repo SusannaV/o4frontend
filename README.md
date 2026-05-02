@@ -1,14 +1,17 @@
 Käynnistetään komennolla npm run dev
-Komentorivi näyttää, mihin osoitteeseen se avautuu (varmaan aina http://localhost:5173/)
+Sovellus käynnistyy osoitteeseen http://localhost:5173/
 Pysäytetään komentorivillä ctrl + c
 
 
 To do:
-- Tuotekorttien sijoittaminen oikeaan kohtaan, 2 rinnakkain (ainakin, jos näyttö on tarpeeksi iso)
-- Muu tyylittely
+- Tuotekorttien muotoilu alkuperäisen suunnitelman mukaiseksi
+- Tuotekorteissa luettelopisteiden ja tekstin sijoitus yhtenäiseksi
+- Suodattimien tyylittely
+- Lajittelun tyylittely
 - Logon lisääminen
 - Ostoskori-ikonin lisääminen
 - Hakutuloslistan renderöinti lyhyempänä ja jotenkin laatikkomaisena
+- Kaikkien elementtien sijoittelu täsmäämään vaaka- ja pystysuunnassa keskenään
 
 - Navigoinnin siirtäminen oikeampaan paikkaan (breadcrumbin tilalle) (useNavigate?)
 - Etusivun teko
