@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from "react-router";
 import axios from 'axios'
 
 import Tuotekortti from './Tuotekortti'
@@ -109,17 +110,17 @@ const Tuotesivu = ({ sivu }) => {
   // Tämä sit näytetään käyttäjälle:
   return (
     <div>
-      <h1>{sivu}</h1>
-      <div>
-        <p>Ostoskori</p>
-      </div>
+      <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
+
       <div className="breadcrumb">
         <p>Breadcrumb</p>
       </div>
+            <div className='routelinkit'>
+        <Link to="/">Etusivu</Link>
+         {/* / <Link to=`\${sivu}>Etusivu</Link>` */}
+      </div>
 
       <div className="container">
-
-
         <div className="sivupalkki">
           <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin}
             hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin} 

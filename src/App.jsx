@@ -12,7 +12,7 @@ import HakutulosLista from './components/HakutulosLista'
 
 const App = () => {
   const [hakutulokset, setHakutulokset] = useState([])
-    const [hakuteksti, setHakuteksti] = useState("")
+  const [hakuteksti, setHakuteksti] = useState("")
 
 
   // Lisätty Haku-komponentti, jonne voi kirjoittaa hakua
@@ -24,15 +24,12 @@ const App = () => {
 
   return (
     <Router>
-      <div className='routelinkit'>
-        <Link to="/">Etusivu</Link>
-        <Link to="/tarjoukset">Tarjoukset</Link>
-        <Link to="/oheislaitteet">Oheislaitteet</Link>
-        <Link to="/tietokoneet">Tietokoneet</Link>
-        <div className='hakutulos'>
-          <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
-          {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
-        </div>
+      <div className='hakutulos'>
+        <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
+        {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
+      </div>
+      <div>
+        <p>Ostoskori</p>
       </div>
 
       <Routes>
