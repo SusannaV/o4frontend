@@ -81,7 +81,7 @@ const Tuotesivu = ({ sivu }) => {
       suodattimet.valmistajat.includes(tuote.merkki)
 
     const kokoMatch = suodattimet.koot.length === 0 ||
-      suodattimet.koot.includes(tuote.koko.slice(0,2))
+      suodattimet.koot.includes(tuote.koko.slice(0, 2))
 
     const hintaMinMatch = hintaSuodattimet.minHinta === 0 ||
       tuote.hinta >= hintaSuodattimet.minHinta
@@ -112,28 +112,24 @@ const Tuotesivu = ({ sivu }) => {
     <div>
       <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
 
-      <div className="breadcrumb">
-        <p>Breadcrumb</p>
-      </div>
-            <div className='routelinkit'>
-        <Link to="/">Etusivu</Link>
-         {/* / <Link to=`\${sivu}>Etusivu</Link>` */}
+      <div className='breadcrumb'>
+        <Link to="/">Etusivu</Link>/<Link to={`/${sivu}`} style={{ textTransform: 'capitalize' }}>{sivu}</Link>
       </div>
 
       <div className="container">
         <div className="sivupalkki">
           <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin}
-            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin} 
-            tyhjennäSuodattimet={tyhjennäSuodattimet}/>
+            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin}
+            tyhjennäSuodattimet={tyhjennäSuodattimet} />
         </div>
 
         <div className="tuotecontainer">
-          {lajitellutTuotteet.length<1 
-          ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla. 
+          {lajitellutTuotteet.length < 1
+            ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla.
               Kokeile vähentää suodattimia.</p>
-          : lajitellutTuotteet.map(tuote =>
-            <Tuotekortti tuote={tuote} key={tuote.id} />)}
-          
+            : lajitellutTuotteet.map(tuote =>
+              <Tuotekortti tuote={tuote} key={tuote.id} />)}
+
         </div>
         <div className="lajittelu">
           <Lajittelu setLajittelu={setLajittelu} />
