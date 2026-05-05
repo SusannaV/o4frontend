@@ -5,7 +5,7 @@ import {
 import { useState } from 'react'
 
 import Etusivu from './pages/Etusivu'
-import Tuotesivu from './pages/Tuotesivu'
+import Kategoriasivu from './pages/Kategoriasivu'
 import Haku from './components/Haku'
 import HakutulosLista from './components/HakutulosLista'
 
@@ -34,13 +34,13 @@ const App = () => {
 
       <Routes>
         <Route path="/tarjoukset" element={
-          <Tuotesivu sivu={"tarjoukset"} />
+          <Kategoriasivu sivu={"tarjoukset"} />
         } />
         <Route path="/oheislaitteet" element={
-          <Tuotesivu sivu={"oheislaitteet"} />
+          <Kategoriasivu sivu={"oheislaitteet"} />
         } />
         <Route path="/tietokoneet" element={
-          <Tuotesivu sivu={"tietokoneet"} />
+          <Kategoriasivu sivu={"tietokoneet"} />
         } />
         <Route path="/" element={
           <Etusivu sivu={"etusivu"} />

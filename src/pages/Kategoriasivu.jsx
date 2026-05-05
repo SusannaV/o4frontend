@@ -6,7 +6,7 @@ import Tuotekortti from '../components/Tuotekortti'
 import Sivupalkki from '../components/Sivupalkki'
 import Lajittelu from '../components/Lajittelu'
 
-const Tuotesivu = ({ sivu }) => {
+const Kategoriasivu = ({ sivu }) => {
   const [tuotteet, setTuotteet] = useState([])
   const [suodattimet, setSuodattimet] = useState({ kategoriat: [], valmistajat: [], koot: [] })
   const [hintaSuodattimet, setHintaSuodattimet] = useState({ minHinta: 0, maxHinta: 4000 })
@@ -138,4 +138,4 @@ const Tuotesivu = ({ sivu }) => {
     </div>
   )
 }
-export default Tuotesivu
+export default Kategoriasivu

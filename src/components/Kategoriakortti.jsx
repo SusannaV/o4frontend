@@ -12,7 +12,7 @@ const Kategoriakortti = ({ kategoria }) => {
   const valittuKuva = kategoriaKuvat[kategoria]
   return (
     <div className="kategoriakortti">
-      <Link to="/tietokoneet" style={{ textTransform: 'capitalize' }}>
+      <Link to={`/${kategoria}`} style={{ textTransform: 'capitalize' }}>
       <h2>{kategoria}</h2>
       <img src={valittuKuva} alt={kategoria} />
       </Link>
