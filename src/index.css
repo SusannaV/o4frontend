@@ -99,6 +99,11 @@ p {
 .tuotekortti h2, .tuotekortti ul {
   color: #08060d;
 }
+input {
+    margin-left: 10px;
+}
+
+
 
 .lajittelu label {
   color: #08060d;
@@ -121,14 +126,36 @@ p {
     align-items: center;
   }
 
-  form {
-    text-align: left;
-    color: #08060d;
+  .Hinta {
+    text-align: center;
+    display: inline-block;
+      color: #08060d;
   }
 
-  form label {
-    display: block;
-  }
+    }
+    .form2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 5px;
+        text-align: center;
+
+
+        color: #08060d;
+    }
+    input[type="checkbox"] {
+
+        margin-right: 5px;
+
+    }
+    input[type="number"] {
+        width: 60px;
+        margin-right: 10px;
+    }
+
+
+
 
   .sivupalkki {
     width: 100%;
@@ -156,7 +183,7 @@ p {
     max-width: 100px;
     border-radius: 8px;
   }  
-}
+
   .routelinkit a{
     padding: 5px;
   }

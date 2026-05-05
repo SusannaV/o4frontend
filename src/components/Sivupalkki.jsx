@@ -14,7 +14,8 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSu
       <h3>Suodattimet</h3>
 
       <h4>Kategoria</h4>
-      <form>
+      <form className="form2">
+
         {kategoriaVaihtoehdot.map(nimi => (
           <label key={nimi}>
             <input
@@ -26,31 +27,35 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSu
             {nimi}
           </label>
         ))}
+
       </form>
 
       <h4>Hinta</h4>
-      <form>
+      <form class="Hinta">
         <label key="minhinta">
-          Min
+            Min
+            <input type="number" name="minHinta" value={hintaSuodattimet.minHinta} max={hintaSuodattimet.maxHinta}
+                   onChange={(e) => {
+                       const uusiArvo = Number(e.target.value);
+                       muutaHintaSuodatin('minHinta', uusiArvo)
+                   }}
+            />
         </label>
-        <input type="number" name="minHinta" value={hintaSuodattimet.minHinta} max={hintaSuodattimet.maxHinta}
-          onChange={(e) => {
-            const uusiArvo = Number(e.target.value);
-            muutaHintaSuodatin('minHinta', uusiArvo)
-          }}
-        />
+
         <label key="maxhinta">
-          Max
+            <span>Max</span>
+            <input type="number" name="maxHinta" value={hintaSuodattimet.maxHinta} min={hintaSuodattimet.minHinta}
+                   onChange={(e) => {
+                       const uusiArvo = Number(e.target.value);
+                       muutaHintaSuodatin('maxHinta', uusiArvo)
+                   }} />
+
         </label>
-        <input type="number" name="maxHinta" value={hintaSuodattimet.maxHinta} min={hintaSuodattimet.minHinta}
-          onChange={(e) => {
-            const uusiArvo = Number(e.target.value);
-            muutaHintaSuodatin('maxHinta', uusiArvo)
-          }} />
+
       </form>
 
       <h4>Valmistaja</h4>
-      <form>
+      <form className="form2">
         {valmistajaVaihtoehdot.map(nimi => (
           <label key={nimi}>
             <input
@@ -65,7 +70,7 @@ const Sivupalkki = ({ suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSu
       </form>
 
       <h4>Näytön koko</h4>
-      <form>
+      <form className="form2">
         {kokoVaihtoehdot.map(nimi => (
           <label key={nimi}>
             <input
