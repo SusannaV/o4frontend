@@ -15,7 +15,6 @@ To do:
 - Hakutuloslistan renderöinti lyhyempänä ja jotenkin laatikkomaisena
 - Kaikkien elementtien sijoittelu täsmäämään vaaka- ja pystysuunnassa keskenään
 
-- Navigoinnin siirtäminen oikeampaan paikkaan (breadcrumbin tilalle) (useNavigate?)
 - Etusivun teko
 - Siirtymien toteuttaminen muille sivuille
 - Muiden sivujen teko, jos ne tehdään

@@ -1,4 +1,6 @@
-import { Link } from "react-router";
+
+import Kategoriakortti from './Kategoriakortti';
+
 
 
 const Etusivu = () => {
@@ -8,9 +10,9 @@ const Etusivu = () => {
         Tervetuloa Werkkokauppaan!
       </h1>
       <div className="routelinkit">
-        <Link to="/tietokoneet">Tietokoneet</Link>
-        <Link to="/oheislaitteet">Oheislaitteet</Link>
-        <Link to="/tarjoukset">Tarjoukset</Link>
+        <Kategoriakortti kategoria="tietokoneet"/>
+        <Kategoriakortti kategoria="oheislaitteet"/>
+        <Kategoriakortti kategoria="tarjoukset"/>
       </div>
     </div>
   )
