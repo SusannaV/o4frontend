@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Tuotekortti = ({ tuote }) => {
 
   const kategoriaKuvat = {
@@ -13,14 +15,16 @@ const Tuotekortti = ({ tuote }) => {
 
   return (
     <div className="tuotekortti">
-      <h2>{tuote.nimi}</h2>
-      <p>{tuote.hinta} €</p>
-      <ul>
-        <li>{tuote.ominaisuudet[0]}</li>
-        <li>{tuote.ominaisuudet[1]}</li>
-        <li>{tuote.ominaisuudet[2]}</li>
-      </ul>
-      <img src={valittuKuva} alt={tuote.kategoria} />
+      <Link to="/tuotesivu" state={{kategoria: tuote.kategoria}}>
+        <h2>{tuote.nimi}</h2>
+        <p>{tuote.hinta} €</p>
+        <ul>
+          <li>{tuote.ominaisuudet[0]}</li>
+          <li>{tuote.ominaisuudet[1]}</li>
+          <li>{tuote.ominaisuudet[2]}</li>
+        </ul>
+        <img src={valittuKuva} alt={tuote.kategoria} />
+      </Link>
     </div>)
 }
 

@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import { Link } from "react-router";
 import axios from 'axios'
 
-import Tuotekortti from './Tuotekortti'
-import Sivupalkki from './Sivupalkki'
-import Lajittelu from './Lajittelu'
+import Tuotekortti from '../components/Tuotekortti'
+import Sivupalkki from '../components/Sivupalkki'
+import Lajittelu from '../components/Lajittelu'
+import Breadcrumb from '../components/Breadcrumb';
 
-const Tuotesivu = ({ sivu }) => {
+const Kategoriasivu = ({ sivu }) => {
   const [tuotteet, setTuotteet] = useState([])
   const [suodattimet, setSuodattimet] = useState({ kategoriat: [], valmistajat: [], koot: [] })
   const [hintaSuodattimet, setHintaSuodattimet] = useState({ minHinta: 0, maxHinta: 4000 })
@@ -81,7 +82,7 @@ const Tuotesivu = ({ sivu }) => {
       suodattimet.valmistajat.includes(tuote.merkki)
 
     const kokoMatch = suodattimet.koot.length === 0 ||
-      suodattimet.koot.includes(tuote.koko.slice(0,2))
+      suodattimet.koot.includes(tuote.koko.slice(0, 2))
 
     const hintaMinMatch = hintaSuodattimet.minHinta === 0 ||
       tuote.hinta >= hintaSuodattimet.minHinta
@@ -111,29 +112,22 @@ const Tuotesivu = ({ sivu }) => {
   return (
     <div>
       <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
-
-      <div className="breadcrumb">
-        <p>Breadcrumb</p>
-      </div>
-            <div className='routelinkit'>
-        <Link to="/">Etusivu</Link>
-         {/* / <Link to=`\${sivu}>Etusivu</Link>` */}
-      </div>
+      <Breadcrumb kategoria={sivu}/>
 
       <div className="container">
         <div className="sivupalkki">
           <Sivupalkki suodattimet={suodattimet} muutaSuodatin={muutaSuodatin}
-            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin} 
-            tyhjennäSuodattimet={tyhjennäSuodattimet}/>
+            hintaSuodattimet={hintaSuodattimet} muutaHintaSuodatin={muutaHintaSuodatin}
+            tyhjennäSuodattimet={tyhjennäSuodattimet} />
         </div>
 
         <div className="tuotecontainer">
-          {lajitellutTuotteet.length<1 
-          ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla. 
+          {lajitellutTuotteet.length < 1
+            ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla.
               Kokeile vähentää suodattimia.</p>
-          : lajitellutTuotteet.map(tuote =>
-            <Tuotekortti tuote={tuote} key={tuote.id} />)}
-          
+            : lajitellutTuotteet.map(tuote =>
+              <Tuotekortti tuote={tuote} key={tuote.id} />)}
+
         </div>
         <div className="lajittelu">
           <Lajittelu setLajittelu={setLajittelu} />
@@ -142,4 +136,4 @@ const Tuotesivu = ({ sivu }) => {
     </div>
   )
 }
-export default Tuotesivu
+export default Kategoriasivu
