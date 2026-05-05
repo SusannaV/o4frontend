@@ -5,6 +5,7 @@ import axios from 'axios'
 import Tuotekortti from '../components/Tuotekortti'
 import Sivupalkki from '../components/Sivupalkki'
 import Lajittelu from '../components/Lajittelu'
+import Breadcrumb from '../components/Breadcrumb';
 
 const Kategoriasivu = ({ sivu }) => {
   const [tuotteet, setTuotteet] = useState([])
@@ -111,10 +112,7 @@ const Kategoriasivu = ({ sivu }) => {
   return (
     <div>
       <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
-
-      <div className='breadcrumb'>
-        <Link to="/">Etusivu</Link>/<Link to={`/${sivu}`} style={{ textTransform: 'capitalize' }}>{sivu}</Link>
-      </div>
+      <Breadcrumb kategoria={sivu}/>
 
       <div className="container">
         <div className="sivupalkki">
