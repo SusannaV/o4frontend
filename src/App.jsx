@@ -4,8 +4,8 @@ import {
 } from 'react-router-dom'
 import { useState } from 'react'
 
-import Etusivu from './components/Etusivu'
-import Tuotesivu from './components/Tuotesivu'
+import Etusivu from './pages/Etusivu'
+import Tuotesivu from './pages/Tuotesivu'
 import Haku from './components/Haku'
 import HakutulosLista from './components/HakutulosLista'
 

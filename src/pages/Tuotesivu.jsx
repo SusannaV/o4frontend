@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from "react-router";
 import axios from 'axios'
 
-import Tuotekortti from './Tuotekortti'
-import Sivupalkki from './Sivupalkki'
-import Lajittelu from './Lajittelu'
+import Tuotekortti from '../components/Tuotekortti'
+import Sivupalkki from '../components/Sivupalkki'
+import Lajittelu from '../components/Lajittelu'
 
 const Tuotesivu = ({ sivu }) => {
   const [tuotteet, setTuotteet] = useState([])

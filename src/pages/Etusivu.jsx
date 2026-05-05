@@ -1,5 +1,5 @@
 
-import Kategoriakortti from './Kategoriakortti';
+import Kategoriakortti from '../components/Kategoriakortti';
 
 
 
