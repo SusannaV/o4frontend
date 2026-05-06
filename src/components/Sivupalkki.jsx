@@ -17,8 +17,8 @@ const Sivupalkki = ({suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuo
             <form className="form2">
                 <div className="checkbox">
                 {kategoriaVaihtoehdot.map(nimi => (
-                    <div className="rivit">
-                    <label key={nimi}>
+                    <div className="rivit" key={nimi}>
+                    <label>
                         <input
                             type="checkbox"
                             name={nimi}
@@ -34,7 +34,7 @@ const Sivupalkki = ({suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuo
             </form>
 
             <h4>Hinta</h4>
-            <form class="Hinta">
+            <form className="Hinta">
                 <label key="minhinta">
                     Min
                     <input type="number" name="minHinta" value={hintaSuodattimet.minHinta}
@@ -63,8 +63,8 @@ const Sivupalkki = ({suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuo
             <form className="form2">
                 <div className="checkbox">
                     {valmistajaVaihtoehdot.map(nimi => (
-                        <div className="rivit">
-                            <label key={nimi}>
+                        <div className="rivit" key={nimi}>
+                            <label>
 
                                 <input
                                     type="checkbox"
@@ -86,8 +86,8 @@ const Sivupalkki = ({suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuo
             <form className="form2">
                 <div className="checkbox">
                 {kokoVaihtoehdot.map(nimi => (
-                    <div className="rivit">
-                    <label key={nimi}>
+                    <div className="rivit" key={nimi}>
+                    <label>
                         <input
                             type="checkbox"
                             name={nimi}
