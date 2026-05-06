@@ -215,21 +215,52 @@ input[type="number"] {
     border-radius: 8px;
 }
 
-.routelinkit a {
-    padding: 5px;
-}
 .etusivu {
-    display: grid;
-
-    width: 100vw;
-
-    grid-template-columns: 1fr;
-
-    padding: 10px;
-    height: auto;
-    max-height: 100%;
-
+  background-color: paleturquoise;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 10px;
+  min-height: 100vh;
 }
+
+.routelinkit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 5vw;
+  width: 90%;
+  max-width: 80vw;
+  margin: 20vh auto;
+}
+
+.routelinkit a {
+  padding: 5px;
+  display: block;
+  padding: 10px;
+  height: auto;
+}
+
+.kategoriakortti {
+  background-color: white;
+  border-color: black;
+  border-radius: 3%;
+  border-style: groove;
+  border-width: 5px;
+}
+
+.kategoriakortti a {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.kategoriakortti a img {
+  width: 100%;
+  max-width: 210px;
+  border-radius: 8px;
+  align-self: center;
+}
+
 .hakutulos {
     position: absolute;
     align-content: center;
