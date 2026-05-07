@@ -9,6 +9,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import Haku from '../components/Haku';
 import HakutulosLista from '../components/HakutulosLista'
 import logo from '../assets/Werkkokauppa logo.png'
+import ostoskori from '../assets/Ostoskori Werkkokauppa 2.png'
 
 
 const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHakuteksti }) => {
@@ -127,7 +128,7 @@ const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHak
         {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
       </div>
       <div className='ostoskori'>
-        <p>Ostoskori</p>
+        <img src={ostoskori} alt="Ostoskori"/>
       </div>
       </div>
       
