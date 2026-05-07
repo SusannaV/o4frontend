@@ -12,15 +12,13 @@ To do:
 - Lajittelun tyylittely
 - Logon lisääminen
 - Ostoskori-ikonin lisääminen
-- Hakutuloslistan renderöinti lyhyempänä ja jotenkin laatikkomaisena
+- Hakutuloslistan renderöinti järkevästi
 - Kaikkien elementtien sijoittelu täsmäämään vaaka- ja pystysuunnassa keskenään
+- Otsikko takaisin kapitalisoiduksi
+- Sivun leveys järkeväksi
+- Tuotekortin korkeus ei riitä
+- Ikoni hakukenttään
 
-- Etusivun teko
-- Siirtymien toteuttaminen muille sivuille
-- Muiden sivujen teko, jos ne tehdään
-
-Voisi olla kiva:
-- Koot suodatetaan nyt .slicella. Jos dataan tulisi kokoja, jotka ovat alle 10 tai yli 99 tuumaa, ei koodi toimi.
 
 Testattava:
 - Hinta-suodattimen toiminta. Mielestäni kenttä tarkistaa nyt syötteet, eikä kaadu virheisiin.

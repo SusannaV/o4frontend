@@ -25,26 +25,24 @@ const App = () => {
 
   return (
     <Router>
-      <div className='hakutulos'>
+      {/* <div className='hakutulos'>
         <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
         {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
-      </div>
-      <div>
-        <p>Ostoskori</p>
-      </div>
+      </div> */}
+
 
       <Routes>
         <Route path="/tarjoukset" element={
-          <Kategoriasivu sivu={"tarjoukset"} />
+          <Kategoriasivu sivu={"tarjoukset"} hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
         } />
         <Route path="/oheislaitteet" element={
-          <Kategoriasivu sivu={"oheislaitteet"} />
+          <Kategoriasivu sivu={"oheislaitteet"}  hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
         } />
         <Route path="/tietokoneet" element={
-          <Kategoriasivu sivu={"tietokoneet"} />
+          <Kategoriasivu sivu={"tietokoneet"}  hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
         } />
         <Route path="/" element={
-          <Etusivu/>
+          <Etusivu  hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
         } />
         <Route path="/tuotesivu" element={
           <Tuotesivu/>

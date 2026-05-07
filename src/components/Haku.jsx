@@ -55,7 +55,7 @@ const Haku = ({ setHakutulokset, hakuteksti, setHakuteksti }) => {
   // },
 
   return (
-    <form>
+    <form className='hakukenttä'>
       <input
         name="haku"
         placeholder="Hae tuotteita"

@@ -6,8 +6,10 @@ import Tuotekortti from '../components/Tuotekortti'
 import Sivupalkki from '../components/Sivupalkki'
 import Lajittelu from '../components/Lajittelu'
 import Breadcrumb from '../components/Breadcrumb';
+import Haku from '../components/Haku';
+import HakutulosLista from '../components/HakutulosLista'
 
-const Kategoriasivu = ({ sivu }) => {
+const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHakuteksti }) => {
   const [tuotteet, setTuotteet] = useState([])
   const [suodattimet, setSuodattimet] = useState({ kategoriat: [], valmistajat: [], koot: [] })
   const [hintaSuodattimet, setHintaSuodattimet] = useState({ minHinta: 0, maxHinta: 4000 })
@@ -111,8 +113,21 @@ const Kategoriasivu = ({ sivu }) => {
   // Tämä sit näytetään käyttäjälle:
   return (
     <div>
+      <div className='header'>
+      <div className='logo'>
+        <p>Werkkokauppa-logo</p>
+      </div>
       <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
-      <Breadcrumb kategoria={sivu}/>
+      <div className='haku-kategoriasivu'>
+        <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
+        {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
+      </div>
+      <div className='ostoskori'>
+        <p>Ostoskori</p>
+      </div>
+      </div>
+      
+      <Breadcrumb kategoria={sivu} />
 
       <div className="container">
         <div className="sivupalkki">
