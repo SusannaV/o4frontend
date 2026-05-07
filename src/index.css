@@ -89,6 +89,7 @@ h2 {
 
 .sivupalkki h3, h4 {
     color: #08060d;
+    text-align: left;
 }
 
 p {
@@ -132,7 +133,8 @@ input {
     .Hinta {
 
         text-align: center;
-        display: inline-block;
+        display: flex;
+
         color: #08060d;
     }
 
@@ -163,7 +165,7 @@ input {
 .form2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 5px;
     text-align: center;
 
@@ -176,6 +178,7 @@ input {
 input[type="number"] {
     width: 60px;
     margin-right: 10px;
+
 }
 
 
