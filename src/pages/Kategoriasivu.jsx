@@ -8,6 +8,8 @@ import Lajittelu from '../components/Lajittelu'
 import Breadcrumb from '../components/Breadcrumb';
 import Haku from '../components/Haku';
 import HakutulosLista from '../components/HakutulosLista'
+import logo from '../assets/Werkkokauppa logo.png'
+
 
 const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHakuteksti }) => {
   const [tuotteet, setTuotteet] = useState([])
@@ -115,7 +117,9 @@ const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHak
     <div>
       <div className='header'>
       <div className='logo'>
-        <p>Werkkokauppa-logo</p>
+         <Link to="/"><img src={logo} alt="Werkkokaupan logo"/>
+         </Link>
+
       </div>
       <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
       <div className='haku-kategoriasivu'>
