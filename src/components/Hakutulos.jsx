@@ -1,17 +1,14 @@
+import { Link } from "react-router";
 const Hakutulos = ({ tulos }) => {
 
-  //Palauttaa nimen hakutuloksesta. Tänne voisi lisätä jonkun alertin siitä, että käyttäjä on klikannut tuotetta, koska
-  // me ei nyt toteuteta tuotesivuja
+  //Palauttaa nimen ja linkin tuotesivulle hakutuloksesta
   return (
     <div className="hakutulos">
       <p>
-        {tulos}
+        <Link to="/tuotesivu" state={{ kategoria: tulos.kategoria }}>
+          {tulos.nimi}
+        </Link>
       </p>
-      {/* <div
-      className="hakutulos"
-      onClick={(e) => alert(`Valitsit ${tulos}!`)}>
-      {tulos}
-    </div> */}
     </div>
   )
 }

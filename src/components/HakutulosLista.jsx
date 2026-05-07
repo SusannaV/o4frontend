@@ -14,7 +14,7 @@ const HakutulosLista = ({hakutulokset, hakuteksti}) => {
     <div className="hakutuloslista">
       {rajoitettuHaku.length < 1 && hakuteksti.length > 0 ? <p>Ei yhtään tulosta antamillasi hakusanoilla</p> : 
       rajoitettuHaku.map((tulos) => {
-        return <Hakutulos tulos={tulos.nimi} key={tulos.id} />;
+        return <Hakutulos tulos={tulos} key={tulos.id}/>;
       })}
     </div>
   )

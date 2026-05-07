@@ -205,7 +205,7 @@ input[type="number"] {
     border-style: groove;
     border-width: 5px;
     height: 35vh;
-    max-height: 100%;
+    max-height: 150%;
     max-width: 35vw;
     overflow-x: hidden;
     display: flex;
@@ -296,8 +296,10 @@ input[type="number"] {
 
 
 .hakutulos {
-    position: absolute;
-    align-content: center;
+    background-color: #9ca3af;
+    color: black;
+    /* position: absolute;
+    align-content: center; */
 }
 
 .header {
@@ -316,6 +318,10 @@ input[type="number"] {
     transform: translateX(-50%);
     margin: 0;
     align-self: center;
+}
+
+.tuotesivu img{
+    max-width: 90vw;
 }
 
 .ostoskori {

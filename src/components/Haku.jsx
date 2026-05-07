@@ -40,19 +40,6 @@ const Haku = ({ setHakutulokset, hakuteksti, setHakuteksti }) => {
           || tuote.merkki.toLowerCase().includes(uusiHakuteksti.toLowerCase())
         ))
   }
-  // {
-  //   "id": 1,
-  //   "nimi": "Acer Predator XB273",
-  //   "hinta": 499.9,
-  //   "ominaisuudet": ["144Hz virkistystaajuus", "G-Sync", "IPS"],
-  //   "koko": "27\"",
-  //   "merkki": "Acer",
-  //   "lisayspvm": "2024-02-15",
-  //   "arviot": 3.8,
-  //   "suosio": 5,
-  //   "kategoria": "Näytöt",
-  //   "alennuksessa": true
-  // },
 
   return (
     <form className='hakukenttä'>

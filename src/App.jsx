@@ -15,39 +15,24 @@ const App = () => {
   const [hakutulokset, setHakutulokset] = useState([])
   const [hakuteksti, setHakuteksti] = useState("")
 
+  const sivut = ["tarjoukset", "oheislaitteet", "tietokoneet"]
 
-  // Lisätty Haku-komponentti, jonne voi kirjoittaa hakua
-  // Hakutuloslista renderöidään vain, jos hakutulokset-listassa on elementtejä
-  // Muoto on {onko hakutulokset lista ei-tyhjä} ja jos tämä on true, renderöidään
-  // <Hakutuloslista>. Muuten ei renderöidä mitään.
-
-  //Lisätty hakutulosten renderöintiehdoksi sen, että hakutulostekstin pituuden täytyy olla enemmän kuin 0
-
+  //Määritellään sivujen osoitteet ja niille menevät propsit. Käydään kaikki kategoriasivut läpi, koska niille
+  //menevät propsit on samoja 
   return (
     <Router>
-      {/* <div className='hakutulos'>
-        <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
-        {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
-      </div> */}
-
-
       <Routes>
-        <Route path="/tarjoukset" element={
-          <Kategoriasivu sivu={"tarjoukset"} hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
-        } />
-        <Route path="/oheislaitteet" element={
-          <Kategoriasivu sivu={"oheislaitteet"}  hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
-        } />
-        <Route path="/tietokoneet" element={
-          <Kategoriasivu sivu={"tietokoneet"}  hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
-        } />
         <Route path="/" element={
-          <Etusivu  hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti}/>
+          <Etusivu hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
         } />
         <Route path="/tuotesivu" element={
-          <Tuotesivu/>
+          <Tuotesivu setHakuteksti={setHakuteksti}/>
         } />
-        
+                {sivut.map((sivu) => (
+          <Route path={sivu} key={sivu} element={
+            <Kategoriasivu sivu={sivu} hakutulokset={hakutulokset} setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
+          } />
+        ))}
       </Routes>
     </Router>
   )
