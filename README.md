@@ -6,15 +6,9 @@ Pysäytetään komentorivillä ctrl + c
 
 
 To do:
-- Kaikkien elementtien sijoittelu täsmäämään vaaka- ja pystysuunnassa keskenään
-- Sivun leveys järkeväksi
 - Tuotekortin korkeus ei riitä
-
-
 - Tuotekorttien muotoilu alkuperäisen suunnitelman mukaiseksi
 - Tuotekorteissa luettelopisteiden ja tekstin sijoitus yhtenäiseksi
-- Suodattimien tyylittely
-- Lajittelun tyylittely
 
 - Tarjoustuotteiden renderöinti etusivulla?
 
@@ -22,6 +16,7 @@ To do:
 
 - Ikoni hakukenttään
 - Etusivun kategoriakorttien kuvat valuu ulos, jos tarpeeksi pieni tila
+- Fontin väri dark modessa
 
 
 Testattava:

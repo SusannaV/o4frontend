@@ -1,32 +1,33 @@
 :root {
-    --text: #6b6375;
-    --text-h: #08060d;
-    --bg: #fff;
-    --border: #e5e4e7;
-    --code-bg: #f4f3ec;
-    --accent: #aa3bff;
-    --accent-bg: rgba(170, 59, 255, 0.1);
-    --accent-border: rgba(170, 59, 255, 0.5);
-    --social-bg: rgba(244, 243, 236, 0.5);
-    --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-    --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-    --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-    --mono: ui-monospace, Consolas, monospace;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
 
-    font: 18px/145% var(--sans);
-    letter-spacing: 0.18px;
-    color-scheme: light dark;
-    color: var(--text);
-    background: var(--bg);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    @media (max-width: 1024px) {
-        font-size: 16px;
-    }
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -44,172 +45,208 @@
     }
 } */
 
-body, html {
-    margin: 0;
-        background-color: paleturquoise;
+body,
+html {
+  margin: 0;
+  background-color: paleturquoise;
 }
 
 #root {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 
-    text-align: center;
-    border-inline: 1px solid var(--border);
-    min-height: 100svh;
-    /* display: flex;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  /* display: flex;
     flex-direction: column; */
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h1, h2 {
-    font-family: var(--heading);
-    font-weight: 500;
-    color: var(--text-h);
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
 }
 
 h1 {
-    font-size: 56px;
-    letter-spacing: -1.68px;
-    margin: 32px 0;
-    @media (max-width: 1024px) {
-        font-size: 36px;
-        margin: 20px 0;
-    }
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
 }
 
 h2 {
-    font-size: 24px;
-    line-height: 118%;
-    letter-spacing: -0.24px;
-    margin: 0 0 8px;
-    @media (max-width: 1024px) {
-        font-size: 20px;
-    }
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
 }
 
-.sivupalkki h3, h4 {
-    color: #08060d;
-    text-align: left;
+.sivupalkki h3,
+h4 {
+  color: #08060d;
+  text-align: left;
+}
+
+.sivupalkki h3 {
+  margin: 0px 0px 10px 0px;
+  font-size: x-large;
+}
+.sivupalkki h4 {
+  margin: 25px 0px 10px 0px;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
-.tuotekortti h2, .tuotekortti ul {
-    color: #08060d;
+.tuotekortti h2,
+.tuotekortti ul {
+  color: #08060d;
 }
 
 input {
-    margin: 5px
-}
-
-
-.lajittelu label {
-    color: #08060d;
+  margin: 5px;
 }
 
 .container {
-    display: grid;
-    width: 100vw;
-    grid-template-columns: 1fr 2fr 1fr;
-    padding: 10px;
-    height: auto;
-    max-height: 100%;
+  display: grid;
+  width: 95vw;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 10px;
+  height: auto;
+  max-height: 100%;
 
-    .keskicontainer {
-        
-    }
-
-    .tuotecontainer {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 5px;
-        align-content: flex-start;
-        align-items: center;
-    }
-
-    .Hinta {
-        text-align: center;
-        display: flex;
-        color: #08060d;
-    }
-
+  .tuotecontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-content: flex-start;
+    align-items: center;
+  }
 }
 
 .checkbox {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .rivit {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 140px;
-    gap: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 140px;
+  gap: 5px;
 }
-.rivit input[type="checkbox"] {
-    margin: 5px;
-    flex-shrink: 0;
+.rivit input[type='checkbox'] {
+  margin: 5px;
+  flex-shrink: 0;
 }
 .form2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    text-align: center;
-    color: #08060d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  text-align: center;
+  color: #08060d;
 }
 
-
-input[type="number"] {
-    width: 60px;
-    margin-right: 10px;
+input[type='number'] {
+  width: 60px;
+  margin-right: 10px;
+  height: 80%;
+  text-align: right;
+  font-size: medium;
 }
 
+.Hinta {
+  display: flex;
+  color: #08060d;
+  text-align: center;
+}
+
+.Hinta label {
+  display: flex;
+  align-items: center;
+}
 
 .sivupalkki {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 90%;
+  height: 100%;
+  position: relative;
+  margin: 0 0 0 1vw;
+}
+
+.nollausbutton {
+  width: 70%;
+  height: 10vh;
+  margin: 20px;
+  border-radius: 30px;
+  font-size: medium;
+  font-weight: bold;
 }
 
 .lajittelu {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  margin: 0 10px;
+}
+
+.lajittelu p {
+  justify-self: left;
+  font-size: larger;
+  font-weight: bold;
+  color: #08060d;
+}
+
+.lajittelu option {
+  width: 60px;
+  margin-right: 10px;
+  height: 80%;
+  font-size: medium;
+}
+
+.lajittelu select {
+  font-size: medium;
 }
 
 .tuotekortti {
-    background-color: white;
-    border-color: black;
-    border-radius: 3%;
-    flex: 1 1 calc(50% - 5px);
-    box-sizing: border-box;
-    border-style: groove;
-    border-width: 5px;
-    height: 35vh;
-    max-height: 150%;
-    max-width: 35vw;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  border-color: black;
+  border-radius: 3%;
+  flex: 1 1 calc(50% - 5px);
+  box-sizing: border-box;
+  border-style: groove;
+  border-width: 5px;
+  height: 35vh;
+  max-height: 150%;
+  max-width: 35vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .tuotekortti img {
-    width: 100%;
-    max-width: 100px;
-    border-radius: 8px;
-    justify-self: center;
+  width: 100%;
+  max-width: 100px;
+  border-radius: 8px;
+  justify-self: center;
 }
 .tuotekortti a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .etusivu {
@@ -223,7 +260,7 @@ input[type="number"] {
 
 .routelinkit {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 5vw;
   width: 90%;
   max-width: 80vw;
@@ -266,12 +303,12 @@ input[type="number"] {
 }
 
 .haku-etusivu input {
-    height: 100%;
-    width: 100%;
-    padding: 10px;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
 }
 
-.haku-kategoriasivu{
+.haku-kategoriasivu {
   height: 20px;
   width: 15vw;
   margin: 0px;
@@ -279,64 +316,69 @@ input[type="number"] {
 }
 
 .haku-kategoriasivu input {
-    height: 100%;
-    width: 100%;
-    padding: 1vh;
-    margin: 0px;
+  height: 100%;
+  width: 100%;
+  padding: 1vh;
+  margin: 0px;
 }
 
-
 .hakutulos {
-    background-color: #9ca3af;
-    color: black;
+  background-color: #9ca3af;
+  color: black;
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 10vh;
-    padding: 5vh 0;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  padding: 5vh 0;
+  position: relative;
 }
 
-.header h1{
-    position: absolute;
-    width: 40vw;
-    left: 50%;
-    transform: translateX(-50%);
+.header h1 {
+  position: absolute;
+  width: 40vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header-etusivu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px 10px;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 10px;
+  position: relative;
 }
-.header-etusivu h1{
-    position: absolute;
-    width: 40vw;
-    left: 50%;
-    transform: translateX(-50%);
+.header-etusivu h1 {
+  position: absolute;
+  width: 40vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.tuotesivu img{
-    max-width: 90vw;
+.tuotesivu img {
+  max-width: 90vw;
 }
 
 .ostoskori {
-    color: #500aff;
-    margin: 0 20px;
+  color: #500aff;
+  margin: 0 20px;
 }
 
 .etusivu .ostoskori {
-     margin-left: auto;
+  margin-left: auto;
 }
 
 .logo-etusivu {
-    height: 30vh;
+  height: 30vh;
 }
 
+.breadcrumb {
+  text-align: left;
+  font-size: larger;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}

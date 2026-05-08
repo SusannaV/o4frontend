@@ -5,7 +5,7 @@ const Lajittelu = ({ setLajittelu }) => {
 
   return (
     <label>
-      Lajittelu:
+      <p>Lajittelu:</p>
       <select onChange={(e) => setLajittelu(e.target.value)}>
         <option value="suosio">Suosituin ensin</option>
         <option value="halvin">Edullisin ensin</option>

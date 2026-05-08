@@ -10,7 +10,7 @@ const Sivupalkki = ({suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuo
     // valitsee listasta kohdan 17".
 
     return (
-        <div className="Sivupalkki">
+        <div>
             <h3>Suodattimet</h3>
 
             <h4>Kategoria</h4>
@@ -101,8 +101,8 @@ const Sivupalkki = ({suodattimet, muutaSuodatin, hintaSuodattimet, muutaHintaSuo
                     </div>
             </form>
 
-            <button onClick={tyhjennäSuodattimet}>
-                Tyhjennä kaikki suodattimet
+            <button className="nollausbutton" onClick={tyhjennäSuodattimet}>
+                Nollaa suodattimet
             </button>
 
         </div>
