@@ -117,22 +117,21 @@ const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHak
   return (
     <div>
       <div className='header'>
-      <div className='logo'>
-         <Link to="/"><img src={logo} alt="Werkkokaupan logo"/>
-         </Link>
+        <div className='logo'>
+          <Link to="/"><img src={logo} alt="Werkkokaupan logo" />
+          </Link>
 
+        </div>
+        <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
+        <div className='haku-kategoriasivu'>
+          <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
+          {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
+        </div>
+        <div className='ostoskori'>
+          <img src={ostoskori} alt="Ostoskori" />
+        </div>
       </div>
-      <h1 style={{ textTransform: 'capitalize' }}>{sivu}</h1>
-      <div className='haku-kategoriasivu'>
-        <Haku setHakutulokset={setHakutulokset} hakuteksti={hakuteksti} setHakuteksti={setHakuteksti} />
-        {hakutulokset && hakuteksti.length > 0 && <HakutulosLista hakutulokset={hakutulokset} hakuteksti={hakuteksti} />}
-      </div>
-      <div className='ostoskori'>
-        <img src={ostoskori} alt="Ostoskori"/>
-      </div>
-      </div>
-      
-      <Breadcrumb kategoria={sivu} />
+
 
       <div className="container">
         <div className="sivupalkki">
@@ -141,17 +140,22 @@ const Kategoriasivu = ({ sivu, hakutulokset, setHakutulokset, hakuteksti, setHak
             tyhjennäSuodattimet={tyhjennäSuodattimet} />
         </div>
 
-        <div className="tuotecontainer">
-          {lajitellutTuotteet.length < 1
-            ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla.
-              Kokeile vähentää suodattimia.</p>
-            : lajitellutTuotteet.map(tuote =>
-              <Tuotekortti tuote={tuote} key={tuote.id} />)}
+        <div className='keskicontainer'>
+          <Breadcrumb kategoria={sivu} />
 
+          <div className="tuotecontainer">
+            {lajitellutTuotteet.length < 1
+              ? <p>Yhtään tuotetta ei löytynyt valitsemillasi suodattimilla.
+                Kokeile vähentää suodattimia.</p>
+              : lajitellutTuotteet.map(tuote =>
+                <Tuotekortti tuote={tuote} key={tuote.id} />)}
+
+          </div>
         </div>
         <div className="lajittelu">
           <Lajittelu setLajittelu={setLajittelu} />
         </div>
+
       </div>
     </div>
   )

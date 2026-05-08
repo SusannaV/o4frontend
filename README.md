@@ -6,18 +6,22 @@ Pysäytetään komentorivillä ctrl + c
 
 
 To do:
+- Kaikkien elementtien sijoittelu täsmäämään vaaka- ja pystysuunnassa keskenään
+- Sivun leveys järkeväksi
+- Tuotekortin korkeus ei riitä
+
+
 - Tuotekorttien muotoilu alkuperäisen suunnitelman mukaiseksi
 - Tuotekorteissa luettelopisteiden ja tekstin sijoitus yhtenäiseksi
 - Suodattimien tyylittely
 - Lajittelun tyylittely
-- Logon lisääminen
-- Ostoskori-ikonin lisääminen
+
+- Tarjoustuotteiden renderöinti etusivulla?
+
 - Hakutuloslistan renderöinti järkevästi
-- Kaikkien elementtien sijoittelu täsmäämään vaaka- ja pystysuunnassa keskenään
-- Otsikko takaisin kapitalisoiduksi
-- Sivun leveys järkeväksi
-- Tuotekortin korkeus ei riitä
+
 - Ikoni hakukenttään
+- Etusivun kategoriakorttien kuvat valuu ulos, jos tarpeeksi pieni tila
 
 
 Testattava:

@@ -29,7 +29,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --text: #9ca3af;
         --text-h: #f3f4f6;
@@ -42,10 +42,11 @@
         --social-bg: rgba(47, 48, 58, 0.5);
         --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
     }
-}
+} */
 
 body, html {
     margin: 0;
+        background-color: paleturquoise;
 }
 
 #root {
@@ -111,18 +112,18 @@ input {
 
 .container {
     display: grid;
-
     width: 100vw;
-
     grid-template-columns: 1fr 2fr 1fr;
-    background-color: paleturquoise;
     padding: 10px;
     height: auto;
     max-height: 100%;
 
+    .keskicontainer {
+        
+    }
+
     .tuotecontainer {
         display: flex;
-
         flex-direction: row;
         flex-wrap: wrap;
         gap: 5px;
@@ -131,10 +132,8 @@ input {
     }
 
     .Hinta {
-
         text-align: center;
         display: flex;
-
         color: #08060d;
     }
 
@@ -144,19 +143,14 @@ input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-
-
-
 }
+
 .rivit {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 140px;
     gap: 5px;
-
-
 }
 .rivit input[type="checkbox"] {
     margin: 5px;
@@ -168,17 +162,13 @@ input {
     align-items: flex-start;
     gap: 5px;
     text-align: center;
-
-
     color: #08060d;
 }
-
 
 
 input[type="number"] {
     width: 60px;
     margin-right: 10px;
-
 }
 
 
@@ -189,14 +179,11 @@ input[type="number"] {
 }
 
 .lajittelu {
-
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
-
 }
 
 .tuotekortti {
@@ -287,22 +274,21 @@ input[type="number"] {
 .haku-kategoriasivu{
   height: 20px;
   width: 15vw;
-  margin: 5px;
+  margin: 0px;
   margin-left: auto;
 }
 
 .haku-kategoriasivu input {
     height: 100%;
     width: 100%;
-    padding: 2px;
+    padding: 1vh;
+    margin: 0px;
 }
 
 
 .hakutulos {
     background-color: #9ca3af;
     color: black;
-    /* position: absolute;
-    align-content: center; */
 }
 
 .header {
@@ -310,7 +296,8 @@ input[type="number"] {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 40px 10px;
+    height: 10vh;
+    padding: 5vh 0;
     position: relative;
 }
 
@@ -319,8 +306,21 @@ input[type="number"] {
     width: 40vw;
     left: 50%;
     transform: translateX(-50%);
-    margin: 0;
-    align-self: center;
+}
+
+.header-etusivu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 10px;
+    position: relative;
+}
+.header-etusivu h1{
+    position: absolute;
+    width: 40vw;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .tuotesivu img{
@@ -328,7 +328,15 @@ input[type="number"] {
 }
 
 .ostoskori {
-    color: black;
+    color: #500aff;
     margin: 0 20px;
+}
+
+.etusivu .ostoskori {
+     margin-left: auto;
+}
+
+.logo-etusivu {
+    height: 30vh;
 }
 
