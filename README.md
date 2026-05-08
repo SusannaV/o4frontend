@@ -12,8 +12,6 @@ To do:
 
 - Tarjoustuotteiden renderöinti etusivulla?
 
-- Hakutuloslistan renderöinti järkevästi
-
 - Ikoni hakukenttään
 - Etusivun kategoriakorttien kuvat valuu ulos, jos tarpeeksi pieni tila
 - Fontin väri dark modessa
