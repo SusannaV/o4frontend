@@ -109,6 +109,10 @@ p {
   margin: 0;
 }
 
+a {
+    color: black;
+}
+
 .tuotekortti h2,
 .tuotekortti ul {
   color: #08060d;
@@ -278,7 +282,7 @@ tuotekortti ul {
   gap: 5vw;
   width: 90%;
   max-width: 80vw;
-  margin: 20vh auto;
+  margin: 20vh auto 5vw auto;
 }
 
 .routelinkit a {
@@ -309,6 +313,19 @@ tuotekortti ul {
   align-self: center;
 }
 
+.tuotecontainer-etusivu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5vw;
+  width: 90%;
+  max-width: 80vw;
+  margin: 5vh auto 5vw auto;
+}
+
+.tarjousotsikko {
+    font-size: xx-large;
+}
+
 .haku-etusivu {
   margin: 50px;
   height: 5vh;
@@ -337,8 +354,20 @@ tuotekortti ul {
 }
 
 .hakutulos {
-  background-color: #9ca3af;
+  background-color: #dbe1e9;
   color: black;
+  
+}
+
+.hakutuloslista {
+    color: black;
+    border-style: solid;
+}
+
+.hakutuloslista p {
+    background-color: #dbe1e9;
+    padding: 5px;
+    width: 95%;
 }
 
 .header {
