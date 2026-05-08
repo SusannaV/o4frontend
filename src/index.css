@@ -268,7 +268,7 @@ input[type='number'] {
   gap: 5vw;
   width: 90%;
   max-width: 80vw;
-  margin: 20vh auto;
+  margin: 20vh auto 5vw auto;
 }
 
 .routelinkit a {
@@ -297,6 +297,19 @@ input[type='number'] {
   max-width: 210px;
   border-radius: 8px;
   align-self: center;
+}
+
+.tuotecontainer-etusivu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5vw;
+  width: 90%;
+  max-width: 80vw;
+  margin: 5vh auto 5vw auto;
+}
+
+.tarjousotsikko {
+    font-size: xx-large;
 }
 
 .haku-etusivu {
