@@ -236,16 +236,30 @@ input[type='number'] {
   max-width: 35vw;
   overflow-x: hidden;
   display: flex;
-  flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+align-items: flex-start;
 }
 
-.tuotekortti img {
+tuotekortti ul {
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.tuotekortti img, .tuotekortti .Otsikko, tuotekortti .hinta {
   width: 100%;
   max-width: 100px;
   border-radius: 8px;
-  justify-self: center;
+
+}
+.Otsikko
+{
+    width: 100px;
 }
 .tuotekortti a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
   text-decoration: none;
 }
 
