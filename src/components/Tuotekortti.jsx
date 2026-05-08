@@ -1,6 +1,6 @@
-import {Link} from "react-router";
+import { Link } from "react-router";
 
-const Tuotekortti = ({tuote}) => {
+const Tuotekortti = ({ tuote }) => {
 
     const kategoriaKuvat = {
         Näytöt: "https://upload.wikimedia.org/wikipedia/commons/7/76/MonitorLCDlcd.svg",
@@ -15,18 +15,18 @@ const Tuotekortti = ({tuote}) => {
 
     return (
         <div className="tuotekortti">
-            <Link to="/tuotesivu" state={{kategoria: tuote.kategoria}}>
-                <img src={valittuKuva} alt={tuote.kategoria}/>
-
+            <Link to="/tuotesivu" state={{ kategoria: tuote.kategoria }}>
+                <img src={valittuKuva} alt={tuote.kategoria} />
+                <div className="Otsikko">
+                    <h2>{tuote.nimi}</h2>
+                    <p>{tuote.hinta} €</p>
+                </div>
                 <ul>
                     <li>{tuote.ominaisuudet[0]}</li>
                     <li>{tuote.ominaisuudet[1]}</li>
                     <li>{tuote.ominaisuudet[2]}</li>
                 </ul>
-                <div className="Otsikko">
-                    <h2>{tuote.nimi}</h2>
-                    <p>{tuote.hinta} €</p>
-                </div>
+
             </Link>
         </div>
     )

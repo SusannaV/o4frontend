@@ -110,7 +110,7 @@ p {
 }
 
 a {
-    color: black;
+  color: black;
 }
 
 .tuotekortti h2,
@@ -125,7 +125,7 @@ input {
 .container {
   display: grid;
   width: 95vw;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   padding: 10px;
   height: auto;
   max-height: 100%;
@@ -235,35 +235,41 @@ input[type='number'] {
   box-sizing: border-box;
   border-style: groove;
   border-width: 5px;
-  height: 35vh;
+  height: 28vh;
   max-height: 150%;
-  max-width: 35vw;
+  width: 45vh;
+  max-width: 50%;
+
   overflow-x: hidden;
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 tuotekortti ul {
-    margin-left: auto;
-    padding-left: 20px;
+  margin-left: auto;
+  padding-left: 20px;
 }
 
-.tuotekortti img, .tuotekortti .Otsikko, tuotekortti .hinta {
+tuotekortti li {
+ text-align: left;
+}
+
+.tuotekortti img,
+.tuotekortti .Otsikko,
+tuotekortti .hinta {
   width: 100%;
   max-width: 100px;
   border-radius: 8px;
-
 }
-.Otsikko
-{
-    width: 100px;
+.Otsikko {
+  width: 100px;
 }
 .tuotekortti a {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   text-decoration: none;
 }
 
@@ -323,7 +329,7 @@ tuotekortti ul {
 }
 
 .tarjousotsikko {
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 .haku-etusivu {
@@ -356,18 +362,17 @@ tuotekortti ul {
 .hakutulos {
   background-color: #dbe1e9;
   color: black;
-  
 }
 
 .hakutuloslista {
-    color: black;
-    border-style: solid;
+  color: black;
+  border-style: solid;
 }
 
 .hakutuloslista p {
-    background-color: #dbe1e9;
-    padding: 5px;
-    width: 95%;
+  background-color: #dbe1e9;
+  padding: 5px;
+  width: 95%;
 }
 
 .header {
